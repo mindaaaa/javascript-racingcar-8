@@ -1,5 +1,5 @@
 import { MissionUtils } from '@woowacourse/mission-utils';
-import RacingGame from '../../service/RacingGame.js';
+import RacingGame from '../../../service/RacingGame.js';
 
 describe('RacingGame 서비스 클래스', () => {
   describe('constructor는', () => {
@@ -11,7 +11,7 @@ describe('RacingGame 서비스 클래스', () => {
       const game = new RacingGame(carNames);
 
       // then
-      const cars = game.getCars();
+      const cars = game.cars;
       expect(cars).toHaveLength(3);
       expect(cars[0].name).toBe('pobi');
       expect(cars[1].name).toBe('woni');
@@ -26,7 +26,7 @@ describe('RacingGame 서비스 클래스', () => {
       const game = new RacingGame(carNames);
 
       // then
-      const cars = game.getCars();
+      const cars = game.cars;
       cars.forEach((car) => {
         expect(car.position).toBe(0);
       });
@@ -48,7 +48,7 @@ describe('RacingGame 서비스 클래스', () => {
       game.playRound();
 
       // then
-      const cars = game.getCars();
+      const cars = game.cars;
       expect(cars[0].position).toBe(1);
       expect(cars[1].position).toBe(0);
     });
@@ -67,7 +67,7 @@ describe('RacingGame 서비스 클래스', () => {
       game.playRound();
 
       // then
-      expect(game.getCars()[0].position).toBe(3);
+      expect(game.cars[0].position).toBe(3);
     });
   });
 

@@ -84,16 +84,16 @@
 
 - [x] Car: 전진/정지 로직 테스트
 - [x] Car: 초기 상태 테스트
-- [ ] RacingGame: 게임 진행 테스트
-- [ ] RacingGame: 우승자 판정 테스트
+- [x] RacingGame: 게임 진행 테스트
+- [x] RacingGame: 우승자 판정 테스트
 
 ### 검증 테스트
 
-- [ ] CarValidator: 이름 길이 검증
-- [ ] CarValidator: 빈 이름 검증
-- [ ] CarValidator: 중복 검증
-- [ ] InputValidator: 형식 검증
-- [ ] RoundValidator: 범위 검증
+- [x] CarValidator: 이름 길이 검증
+- [x] CarValidator: 빈 이름 검증
+- [x] CarValidator: 중복 검증
+- [x] InputValidator: 형식 검증
+- [x] RoundValidator: 범위 검증
 
 ### 뷰 테스트
 
@@ -101,11 +101,6 @@
 - [x] InputView: 횟수 변환 테스트
 - [x] OutputView: 라운드 결과 출력 테스트
 - [x] OutputView: 우승자 출력 테스트
-
-### 통합 테스트
-
-- [ ] ApplicationTest: 전체 플로우 테스트
-- [ ] ApplicationTest: 예외 처리 테스트
 
 ---
 
@@ -151,7 +146,7 @@ __test__/
 - [x] 3항 연산자 사용하지 않기
 - [x] 함수가 한 가지 일만 하도록 작게 만들기
 - [x] private 필드 사용 (#)
-- [ ] Jest 테스트 커버리지 확보
+- [x] Jest 테스트 커버리지 확보
 
 ### 설계 원칙
 

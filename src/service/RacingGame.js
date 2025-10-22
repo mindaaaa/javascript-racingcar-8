@@ -22,7 +22,7 @@ export default class RacingGame {
     });
   }
 
-  get Cars() {
+  get cars() {
     return this.#cars;
   }
 
