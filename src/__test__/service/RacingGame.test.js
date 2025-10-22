@@ -1,5 +1,5 @@
 import { MissionUtils } from '@woowacourse/mission-utils';
-import RacingGame from '../../../service/RacingGame.js';
+import RacingGame from '../../service/RacingGame.js';
 
 describe('RacingGame 서비스 클래스', () => {
   describe('constructor는', () => {

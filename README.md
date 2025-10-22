@@ -109,31 +109,35 @@
 ```
 src/
   ├── domain/
-  │   ├── Car.js                    ✅ 완료
+  │   ├── Car.js
   │   └── validator/
-  │       ├── CarValidator.js       🔲 예정
-  │       └── RoundValidator.js     🔲 예정
+  │       └── CarValidator.js
   ├── service/
-  │   └── RacingGame.js             🔲 예정
-  ├── view/
-  │   ├── InputView.js              ✅ 완료
-  │   ├── OutputView.js             ✅ 완료
+  │   ├── RacingGame.js
   │   └── validator/
-  │       └── InputValidator.js     🔄 진행 중
-  ├── App.js                        🔲 예정
+  │       └── RoundValidator.js
+  ├── view/
+  │   ├── InputView.js
+  │   ├── OutputView.js
+  │   └── validator/
+  │       └── InputValidator.js
+  ├── App.js
   └── index.js
 
 __test__/
   ├── domain/
-  │   ├── Car.test.js               ✅ 완료
-  │   └── RacingGame.test.js        🔲 예정
+  │   ├── Car.test.js
+  │   └── validator/
+  │       └── CarValidator.test.js
+  ├── service/
+  │   ├── RacingGame.test.js
+  │   └── validator/
+  │       └── RoundValidator.test.js
   ├── view/
-  │   ├── InputView.test.js         ✅ 완료
-  │   └── OutputView.test.js        ✅ 완료
-  └── validator/
-      ├── CarValidator.test.js      🔲 예정
-      ├── InputValidator.test.js    🔲 예정
-      └── RoundValidator.test.js    🔲 예정
+  │   ├── InputView.test.js
+  │   ├── OutputView.test.js
+  │   └── validator/
+  │       └── InputValidator.test.js
 ```
 
 ---
@@ -154,4 +158,97 @@ __test__/
 - [x] 입력 검증과 도메인 검증 분리
 - [x] 테스트 더블(Mock, Spy) 활용
 - [x] 단일 책임 원칙 준수
-- [ ] YAGNI 원칙 적용 (필요한 것만 구현)
+- [x] YAGNI 원칙 적용 (필요한 것만 구현)
+
+---
+
+## 📋 작업 체크리스트
+
+### 🏗️ 도메인 계층
+
+- [x] `Car` - 자동차 모델
+  - [x] 이름 및 위치 관리
+  - [x] 랜덤값 기반 전진 로직 (4 이상)
+  - [x] getter 제공 (name, position)
+  - [x] 단위 테스트 작성
+
+### 🎮 서비스 계층
+
+- [x] `RacingGame` - 게임 진행
+  - [x] Car 인스턴스 생성 및 관리
+  - [x] 라운드 진행 (Random 사용)
+  - [x] 우승자 판정 (공동 우승 지원)
+  - [x] Random Mock 테스트 작성
+
+### 🖥️ 뷰 계층
+
+- [x] `InputView` - 입력 처리
+  - [x] 자동차 이름 입력 (쉼표 분리)
+  - [x] 시도 횟수 입력
+  - [x] Mock 기반 테스트
+- [x] `OutputView` - 출력 처리
+  - [x] 라운드 결과 출력 (대시 표시)
+  - [x] 우승자 출력 (단독/공동)
+  - [x] Spy 기반 테스트
+
+### ✅ 검증 계층
+
+- [x] `CarValidator` - 도메인 규칙
+  - [x] 이름 길이 (5자 이하)
+  - [x] 중복 검증
+  - [x] 단위 테스트
+- [x] `InputValidator` - 입력 형식
+  - [x] 빈 값, null, undefined 검증
+  - [x] 숫자 변환 검증
+  - [x] 단위 테스트
+- [x] `RoundValidator` - 라운드 규칙
+  - [x] 최소값 (1 이상)
+  - [x] 정수 검증
+  - [x] 단위 테스트
+
+### 🎯 통합
+
+- [x] `App` - 메인 플로우
+  - [x] 입력 및 검증 파이프라인
+  - [x] 게임 진행 및 출력
+  - [x] 에러 처리
+- [ ] `ApplicationTest` - 통합 테스트
+
+### 📝 문서화
+
+- [x] 기능 명세 작성
+- [x] 프로젝트 구조 정리
+- [x] 테스트 전략 문서화
+
+### 🔧 코드 품질
+
+- [x] indent depth 2 이하 준수
+- [x] 3항 연산자 미사용
+- [x] 함수 단일 책임 원칙
+- [x] private 필드 활용 (#)
+- [x] 테스트 더블 적용 (Mock, Spy)
+
+---
+
+## 📊 테스트 현황
+
+| 계층        | 파일                   | 상태 |
+| ----------- | ---------------------- | ---- |
+| Domain      | Car.test.js            | ✅   |
+| Service     | RacingGame.test.js     | ✅   |
+| View        | InputView.test.js      | ✅   |
+| View        | OutputView.test.js     | ✅   |
+| Validator   | CarValidator.test.js   | ✅   |
+| Validator   | InputValidator.test.js | ✅   |
+| Validator   | RoundValidator.test.js | ✅   |
+| Integration | ApplicationTest.js     | ⏳   |
+
+---
+
+## 🎯 설계 원칙 적용
+
+- ✅ **SRP (단일 책임)**: 클래스별 명확한 역할 분리
+- ✅ **캡슐화**: private 필드로 상태 보호
+- ✅ **계층 분리**: Domain / Service / View / Validator
+- ✅ **테스트 가능성**: Mock/Spy를 통한 격리 테스트
+- ✅ **YAGNI**: 필요한 기능만 구현
