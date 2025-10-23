@@ -1,4 +1,4 @@
-import CarValidator from '../../../domain/validator/CarValidator.js';
+import CarValidator from '../../../domain/policy/CarValidator.js';
 
 describe('CarValidator 도메인 검증 클래스', () => {
   describe('validateNameLength 메서드는', () => {

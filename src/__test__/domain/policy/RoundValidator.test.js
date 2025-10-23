@@ -1,4 +1,4 @@
-import RoundValidator from '../../../service/validator/RoundValidator.js';
+import RoundValidator from '../../../domain/policy/RoundValidator.js';
 
 describe('RoundValidator 라운드 검증 클래스', () => {
   describe('validateMinimum 메서드는', () => {
